@@ -158,7 +158,11 @@ begin
   oblasti_beden := [Bedny1,Bedny2,Bedny3,Bedny4,Bedny5,Bedny6,Bedny7,Bedny8];
   dalsi_oblasti_beden := [dalsi_bedny];
   koof_bedny = 2.5;
-
+  WFT_Points_MP = 3;
+  
+  FLAGY_AREA = [f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15];
+  FLAGY_XY = [[261,214],[291,219],[181,179],[206,235],[253,283],[321,287],[245,141],[330,175],[355,229],[93,103],[194,102],[330,125],[376,284],[169,265],[378,351]];
+  FLAGY_AREA1= [ff1,ff2,ff3,ff4,ff5,ff6,ff7,ff8,ff9,ff10,ff11,ff12,ff13,ff14,ff15];
   BuildUpAreas:= [base1,base2,base3,base4,base5,base6,Base7,Base8];
 end;
 
