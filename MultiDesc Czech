@@ -1,0 +1,39 @@
+[CZE]  """
+Dodatek k nastavení:
+Pravidla hry určují nastavení položek označených hvězdičkou (*) bez ohledu na vaše nastavení.
+Nastavení siberitové bomby se vztahuje k Technologické úrovni 8, která povoluje technologii Štěpení siberitu.
+Odpoledne fungují solární panely na 110% procent, uprostřed noci jen na 35%.
+Pravidla hry - Eco War - Hráči, kteří zvolili národ Rus dostanou automaticky přiřazen národ Američan nebo Arab.
+
+Spojené národy - vyberte svůj národ podle toho, jakou kombinaci národů chcete mít:   (Se SGUI, tohle neni potřeba)
+Američan = Američan + Arab
+Arab = Arab + Rus
+Rus = Rus + Američan
+
+ListBox 0 "Pravidla hry" count 9 items "Bez pravidel" "Clan Base" "Clan War" "Soldier War" "Nuclear War" "Hardcore" "Dynamic SW" "Old Rules" "Eco War" default 0 "" "" "" "" "" "" "" "" ""
+ListBox 1 "Úroveň základny *" count 5 items "Bez základny" "Pouze skladiště" "Opevnění" "Malá základna" "Velká základna" default 1 "Chybí hlavní základna." "Pouze skladiště." "Sklad a opevnění." "Částečně vybavená základna." "Plně vybavená základna." 
+ListBox 2 "Množství lidí *" count 21 items "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" default 8 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" 
+ListBox 3 "Množství opičáků *" count 13 items "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" default 0 "" "" "" "" "" "" "" "" "" "" "" "" "" 
+ListBox 4 "Úroveň zkušeností *" count 4 items "Nezkušení" "Málo zkušení" "Zkušení" "Zkušenější" default 1 "Průměrná úroveň u hlavní dovednosti je 2." "Průměrná úroveň u hlavní dovednosti je 3." "Průměrná úroveň u hlavní dovednosti je 4." "Průměrná úroveň u hlavní dovednosti je 5." 
+ListBox 5 "Povolání v týmu" count 2 items "Náhodné" "Rovnoměrné" default 1 "Povolání je zvoleno každému člověku náhodně." "Každé povolání je mezi lidmi zastoupeno přibližně ve stejném počtu."
+ListBox 6 "Výchozí suroviny *" count 4 items "Žádné" "Málo" "Středně" "Hodně" default 2 "" "" "" "" 
+ListBox 7 "Četnost zásilek *" count 3 items "Malá" "Střední" "Vysoká" default 1 "" "" "" 
+ListBox 8 "Ložiska ropy *" count 2 items "Normálně" "Hodně" default 0 "" "" 
+ListBox 9 "Ložiska siberitu *" count 2 items "Normálně" "Hodně" default 0 "" "" 
+ListBox 10 "Podpůrné vlajky *" count 5 items "Žádné" "Slábnou rychle" "Slábnou normálně" "Slábnou pomalu" "Neslábnou" default 3 "Hlavní základna nemá podpůrnou vlajku." "Bonus k obraně v blízkosti podpůrné vlajky se snižuje rychle." "Bonus k obraně v blízkosti podpůrné vlajky se snižuje normálně." "Bonus k obraně v blízkosti podpůrné vlajky se snižuje pomalu." "Bonus k obraně v blízkosti podpůrné vlajky se nesnižuje." 
+ListBox 11 "Podmínky vítěztví" count 3 items "Vyhlazení" "Nadvláda" "Atentát" default 1 "Zabij všechny lidi, znič všechny sklady a počítačem/opičákem řízená vozidla." "Zabij všechny lidi." "Zabij hrdinu." 
+ListBox 12 "Divocí opičáci *" count 4 items "Žádní" "Málo" "Středně" "Hodně" default 3 "" "" "" "" 
+ListBox 13 "Šavlozubí tygři *" count 4 items "Žádní" "Málo" "Středně" "Hodně" default 2 "" "" "" ""  
+ListBox 14 "Typ obnovení lidí" count 4 items "Žádná obnova" "Lidé navíc" "Obnova mrtvých" "Náhrada mrtvých" default 2 "Nepřistávají žádní lidé." "Stále přistávají noví lidé." "Smrt člověka způsobí přistání nového člověka se stejnými dovednostmi." "Smrt člověka způsobí přistání nového člověka s jinými dovednostmi." 
+ListBox 15 "Obnovování lidí *" count 3 items "Občas" "Normálně" "Běžně" default 1 "Lidé přistávají pomaleji než normálně." "Lidé přistávají s normálním časovým odstupem." "Lidé přistávají častěji než normálně." 
+ListBox 16 "Počáteční úroveň technologií *" count 9 items "0" "1" "2" "3" "4" "5" "6" "7" "8" default 8 "Žádné technologie." "Ropa a solární technologie, dílna." "Rotační kulomet, opolidé, továrna." "Kasárny, dělo, nákladní prostor, raketomet, odstřelovač." "Siberit, UI, laser, drogy, minomety, bazuky." "Dálkové ovládání, kolopás, sebezničení, těžká děla, zpomalovací a uspávací munice." "Biodetekce, zpomalovač, rakety." "Dvojitý laser, imploze siberitu, behemot." "Siberitová bomba." 
+ListBox 17 "Technologický postup *" count 4 items "Nezvyšuje se" "Rychlý" "Normalní" "Pomalý" default 2 "Technologická úroveň zůstává stejná jako na začátku hry." "Technologická úroveň stoupá každých 0,8 (z 0 na 1) až 6 (ze 7 na 8) minut." "Technologická úroveň stoupá každých 1,75 (z 0 na 1) až 12 (ze 7 na 8) minut." "Technologická úroveň stoupá každých 2,5 (z 0 na 1) až 18 (ze 7 na 8) minut."
+ListBox 18 "Detekce siberitu *" count 2 items "Nevynalezená" "Vynalezená" default 1 "" "" 
+ListBox 19 "Siberitová bomba *" count 5 items "Povolena" "Po půl hodině se povolí" "Po hodině se povolí" "Po hodině a půl se povolí" "Po dvou hodinách se povolí" default 0 "Hráči mohou vynalézt technologii siberitového štěpení." "Po půl hodině je možné vynalézt technologii siberitového štěpení." "Po hodině je možné vynalézt technologii siberitového štěpení." "Po jedné a půl hodině je možné vynalézt technologii siberitového štěpení." "Po dvou hodinách je možné vynalézt technologii siberitového štěpení." 
+ListBox 20 "Čas na přípravu *" count 4 items "Žádný" "5 Minut" "10 Minut" "15 Minut" default 0 "Hráči na sebe mohou útočit hned." "Hráči na sebe mohou útočit po 5 minutách." "Hráči na sebe mohou útočit po 10 minutách." "Hráči na sebe mohou útočit po 15 minutách."
+ListBox 21 "Arabský šejk *" count 3 items "Bez šejka" "Hrdina je šejkem" "Šejk je navíc" default 2 "Arabští hráči nemají šejka." "Hrdina arabských hráčů má povolání Pouštní bojovník." "Arabští hráči mají Šejka jako postavu navíc, která se neobnovuje."
+ListBox 22 "Počáteční denní doba" count 5 items "Ráno" "Dopoledne" "Odpoledne" "Večer" "Uprostřed noci" default 1 "Mezi 4. a 7. hodinou." "Mezi 8. a 12. hodinou." "Mezi 13. a 17. hodinou." "Mezi 18. a 22. hodinou." "Mezi 23. a 3. hodinou." 
+ListBox 23 "Rychlost herního času" count 5 items "Reálná" "Velmi pomalá" "Pomalá" "Normální" "Rychlá" default 4 "Minuta ve hře trvá minutu." "Minuta ve hře trvá 25 sekund." "Minuta ve hře trvá 10 sekund." "Minuta ve hře trvá 3 sekundy." "Minuta ve hře trvá 1 sekundu."
+ListBox 24 "Veřejné skóre" count 2 items "Ne" "Ano" default 1 "Každý hráč vidí jen své skóre." "Každý hráč vidí skóre i ostatních hráčů."  
+ListBox 25 "Body k výhře Krále kopce" count 8 items "Vypnuto" "200" "300" "500" "700" "1000" "1500" "2000" default 0 "Vítězství Král kopce je vypnuto." "K dosažení vítězství Král kopce je potřeba 200 bodů" "K dosažení vítězství Král kopce je potřeba 300 bodů""K dosažení vítězství Král kopce je potřeba 500 bodů""K dosažení vítězství Král kopce je potřeba 700 bodů""K dosažení vítězství Král kopce je potřeba 1000 bodů""K dosažení vítězství Král kopce je potřeba 1500 bodů""K dosažení vítězství Král kopce je potřeba 2000 bodů"
+ListBox 26 "Teritoriální Válka" count 11 items "Vypnuto" "Obsadit 3 z 5 vlajek" "Obsadit 4 z 5 vlajek" "Obsadit všech 5 vlajek" "Získat 200" "Získat 300" "Získat 500" "Získat 700" "Získat 1000" "Získat 1500" "Získat 2000" default 0 "Vítězství Teritoriální válkou je vypnuto." "K dosažení vítězství Teritoriální válkou je potřeba obsadit 3 z 5 vlajek" "K dosažení vítězství Teritoriální válkou je potřeba obsadit 4 z 5 vlajek" "K dosažení vítězství Teritoriální válkou je potřeba obsadit všech 5 vlajek" "K dosažení vítězství Teritoriální válkou je potřeba 200 bodů" "K dosažení vítězství Teritoriální válkou je potřeba 300 bodů" "K dosažení vítězství Teritoriální válkou je potřeba 500 bodů" "K dosažení vítězství Teritoriální válkou je potřeba 700 bodů" "K dosažení vítězství Teritoriální válkou je potřeba 1000 bodů""K dosažení vítězství Teritoriální válkou je potřeba 1500 bodů""K dosažení vítězství Teritoriální válkou je potřeba 2000 bodů"
