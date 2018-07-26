@@ -1,0 +1,53 @@
+export us_ept, ru_leviatan, ar_grenade_launcher,
+  us_light_cargo_bay, ar_light_cargo_bay, ar_bulldozer, ar_crane, ru_heavy_cargo_bay,
+  ar_siberium_rocket, ar_siberium_rocket_remainder,
+  ar_heavy_Hovercraft,ifThrowback,
+  tech_ept, tech_granade_launcher,tech_leviathan;
+
+Export function newThrowbackVariables;
+begin
+  if ifThrowback then
+  begin
+  // super weapons
+    us_ept = 72;                        //Bleskomet
+    ru_leviatan = 71;                   //Leviatan
+    ar_grenade_launcher = 70;           //Granátomet
+  //new non combat
+    us_light_cargo_bay= 16;             //Lehký naklaïák
+    ar_light_cargo_bay= 33;             //Lehký naklaïák
+    ar_bulldozer= 66;                    //Buldozer
+    ar_crane= 65;                       //Jeøáb
+    ru_heavy_cargo_bay= 54;             //Tìžký Naklaïák
+  // ar siberium rocket weapons
+    ar_siberium_rocket= 63;             //Siberitová Raketa
+    ar_siberium_rocket_remainder= 67;   //Vystøelená Sib. raketa
+  // chassis
+
+  // Tech
+    tech_ept = 75;
+    tech_granade_launcher = 73;
+    tech_leviathan = 74;
+
+  end
+  else
+  begin
+   // super weapons
+    us_ept = us_laser;                        //Bleskomet
+    ru_leviatan = ru_heavy_gun;                   //Leviatan
+    ar_grenade_launcher = ar_rocket_launcher;           //Granátomet
+  //new non combat
+    us_light_cargo_bay= us_cargo_bay;             //Lehký naklaïák
+    ar_light_cargo_bay= ar_cargo_bay;             //Lehký naklaïák
+    ar_bulldozer= ru_bulldozer;                    //Buldozer
+    ar_crane= ru_crane;                       //Jeøáb
+    ru_heavy_cargo_bay= ru_cargo_bay;             //Tìžký Naklaïák
+  // ar siberium rocket weapons
+    ar_siberium_rocket= ru_siberium_rocket;             //Siberitová Raketa
+    ar_siberium_rocket_remainder= ru_siberium_rocket_remainder;   //Vystøelená Sib. raketa
+  // chassis
+
+  end;
+
+end;
+
+

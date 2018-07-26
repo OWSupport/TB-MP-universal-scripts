@@ -1,0 +1,43 @@
+Export
+ MultiplayerTimeEnabled,
+ WaitServerStrings,
+ Display_kings,
+ extraStrings,
+ limitsStrings,
+ CurrentTime,
+ DebugStrings,
+ Display_WFG;
+
+export function GetMultiplayerTime;
+begin
+  Result = ['#gamespeed', game_speed-4] ^ ['#Multi1x1-Time', tick];
+end;
+
+export function InitMultiplayerTime;
+begin
+
+  MultiplayerTimeEnabled := True;
+  display_strings=GetMultiplayerTime;
+end;
+
+export function ShowTimer;
+var AllStrings;
+begin
+  AllStrings=GetMultiplayerTime;
+  AllStrings:=AllStrings ^ ['#TechLevel', Tech_Level];
+   if (CurrentTime) then AllStrings = AllStrings ^ ['#Daily-Time', CurrentTime];
+  if (WaitServerStrings) then AllStrings:= AllStrings ^ '' ^ WaitServerStrings;
+  if (Display_kings) then AllStrings:= AllStrings ^ '' ^ Display_kings;
+  if (Display_WFG) then AllStrings:= AllStrings ^ '' ^ Display_WFG;
+  if (ExtraStrings) then AllStrings:= AllStrings ^ '' ^ ExtraStrings;
+  if (LimitsStrings) then AllStrings:= AllStrings ^ '' ^ LimitsStrings;
+  if (DebugStrings) then AllStrings:= AllStrings ^ '' ^ DebugStrings;
+  Display_Strings:= AllStrings;
+ 
+end;
+
+every 0$1 trigger MultiplayerTimeEnabled do
+begin
+  ShowTimer;
+  Enable;
+end;

@@ -1,0 +1,60 @@
+var Month;
+export Function init_Daily;
+begin
+    //Month = GetMonth();
+
+//     TimePhase = [6$35, 6$40, 6$50, 7$00, 7$05, 17$35 ,17$40 ,17$50 ,18$00, 18$05 ];
+//     DailyPhase = ['Colors01.txt','Colors02.txt','Colors03.txt','Colors04.txt','Colors05.txt','Colors06.txt'];
+     if not CurrentTime then
+     begin
+       CurrentTime = Rand(daily_start[1], daily_start[2]) div 0$01;
+       CurrentTime = CurrentTime * 0$01;
+
+       if CurrentTime >= 24$00 then
+         CurrentTime = CurrentTime -24$00;
+     end;
+
+
+
+
+     case CurrentTime of
+         0$00.. TimePhase[1], TimePhase[10]+1.. 24$00                  : begin ChangePhase(DailyPhase[6],0.3);  end;  //35
+         TimePhase[1]+1.. TimePhase[2], TimePhase[9]+1.. TimePhase[10] : begin ChangePhase(DailyPhase[5],0.5);  end;   //50
+         TimePhase[2]+1.. TimePhase[3], TimePhase[8]+1.. TimePhase[9]  : begin ChangePhase(DailyPhase[4],0.6);  end;   //60
+         TimePhase[3]+1.. TimePhase[4], TimePhase[7]+1.. TimePhase[8]  : begin ChangePhase(DailyPhase[3],0.8);  end;   //90
+         TimePhase[4]+1.. TimePhase[5], TimePhase[6]+1.. TimePhase[7]  : begin ChangePhase(DailyPhase[2],0.9);  end;   //95
+                                                                    else begin ChangePhase(DailyPhase[1],1.1);   end; //110
+     end;
+
+     enable(31);
+
+end;
+
+every 0$01 MARKED 31 do
+begin
+  if daily_speed then
+    wait(daily_speed);
+
+  CurrentTime = CurrentTime + 0$01;
+
+  Case CurrentTIme of
+    TimePhase[5]               : begin ChangePhase(DailyPhase[1],1.1);   end;
+    TimePhase[4], TimePhase[6] : begin ChangePhase(DailyPhase[2],0.9);  end;
+    TimePhase[3], TimePhase[7] : begin ChangePhase(DailyPhase[3],0.8);  end;
+    TimePhase[2], TimePhase[8] : begin ChangePhase(DailyPhase[4],0.6);  end;
+    TimePhase[1], TimePhase[9] : begin ChangePhase(DailyPhase[5],0.5);  end;
+    TimePhase[10]              : begin ChangePhase(DailyPhase[6],0.3);  end;
+  end;
+
+  if CurrentTime >= 24$00 then
+    CurrentTime = 0$00;
+
+  Enable;
+end;
+
+function changePhase(dp,srp);
+begin
+  solar_recharge_percent = srp;
+  LoadColorsTXT(dp);
+
+end;

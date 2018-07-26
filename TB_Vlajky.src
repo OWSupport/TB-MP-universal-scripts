@@ -1,0 +1,68 @@
+var strength,
+    lastxwin,lastywin,
+    lastxlost,lastylost;
+
+
+function Update_Flags;
+var un;
+begin
+  for un in battle_flags_id do
+    ChangeBattleFlagOptions(un,[ [bfo_defend_bonus_human,strength],
+                                 [bfo_defend_bonus_vehicle,strength div 2],
+                                 [bfo_defend_bonus_building,strength div 5],
+                                 [bfo_height,strength] ]);
+end;
+
+every 0$0.1 do
+var un;
+begin
+  if not def_morale_flags then
+    exit;
+  if not morale_decreasing_time then
+    exit;
+  strength=100;
+  repeat
+    wait(morale_decreasing_time);
+    strength:=strength-1;
+    Update_Flags;
+  until not strength;
+
+  for un in battle_flags_id do
+    KillBattleFlag(un);
+end;
+// když je víc vlajkej jedné barvy, vrací špatný ID
+{export function CallKillBattleFlag(j);
+var pos,x,y,bf;
+begin
+  pos:=Side_Positions[GetSide(j)];
+
+  x=start_def[pos][1];
+  y=start_def[pos][2];
+  bf=FindBattleFlag(x,y);
+  battle_flags_id = battle_flags_id diff bf;
+  KillBattleFlag(bf);
+
+  if game_type in GT_DoubleNat^GT_DoublePeople^GT_TripleNat then
+  begin
+    wait(1);
+    x=start_def[pos+1][1];
+    y=start_def[pos+1][2];
+
+    bf=FindBattleFlag(x,y);
+    battle_flags_id = battle_flags_id diff bf;
+    extrastrings = [x,y,bf];
+    KillBattleFlag(bf);
+  end;
+
+  if game_type in GT_TripleNat then
+  begin
+    wait(1);
+    x=start_def[pos+2][1];
+    y=start_def[pos+2][2];
+
+    bf=FindBattleFlag(x,y);
+    battle_flags_id = battle_flags_id diff bf;
+    extrastrings = [x,y,bf];
+    KillBattleFlag(bf);
+  end;                        
+end;       }

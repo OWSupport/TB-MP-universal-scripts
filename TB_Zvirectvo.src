@@ -1,0 +1,176 @@
+var nations;
+function apeman_init;
+var ape_names;
+begin
+  uc_side:=0;
+  uc_nation:=nation_nature;
+
+    ape_names = ['Tupoun','Opoce','Opka','Butrus','Bubu','Condor','Kuklajs',
+                 'Simon','Ugh','Urgh','Argh','Aargh','Hrumph','Grumph','Oorg',
+                 'Eghrr','Rrrr','Bark','Wraughrr',':-)','Semik','Hrgh','Hur',
+                 'Havran','Nazghul','Brutal','Kato Zluta Opoce','Monkey',
+                 'Yeargh','Marta','Batman','Barkman','Xcenovsk','David Love',
+                 'Freon','Stoupik','Quik','Jam Prckovic Laren','CFC','Kvakous',
+                 'Sumys','Agent','Nazghul','Havran','Vrana','Havranek','Carlos Frank',
+                 'Tekar','Andy','Angela','Janina','Shipanze','Simpan','Nazghulik',
+                 'Potrusil','Potrus','Butrus','Potrusil','Simon','Auuu','NEMO',
+                 'Silena opice','Meuznenapadazadnejmeno','Uhrun','Marmelada',
+                 'Negr','Fnuk','Slim','Kvak','Dave','Bruntal','Arnie','Polda',
+                 'Jen','Siddha','Silnickar','Bukvice','Zalud','Elvis','Nazghul',
+                 'Chruadfa','Nazghul','Kato Yellow Ape','Cpt. Ape','King Of The Hill',
+                 'Pterinochilus','Bad Platypus','Really Bad Ape','Looser','Looser','Looser',
+                 'Megadeth','Mad Ape','Wraughhhh','":)'];
+
+  hc_name=ape_names[Rand(1,ape_names)];
+  randomHumanStats(initial_level-2);
+
+  hc_class:=class_apeman;
+  if hc_attr[2] < 12 then
+    hc_attr = [hc_attr[1]+5,hc_attr[2]+1]
+  else hc_attr = [hc_attr[1]+5,hc_attr[2]];
+  hc_sex:=sex_male;
+  hc_importance:=0;
+  hc_agressivity:=Rand(-20,20);
+end;
+
+// základní opièáci, pokud jich je na mapì víc jak limit, tak se neobjeví
+every 0$15+0$1 MARKED 493 do
+var i,d,ape;
+begin
+       case tick of
+           1.. 1$0:  d:=15;
+   1$0+1.. 5$0:  d:=14;
+   5$0+1..10$0:  d:=12;
+  10$0+1..20$0:  d:=10;
+  20$0+1..30$0:  d:=8;
+  30$0+1..50$0:  d:=7;
+  50$0+1..300$0: d:=6;
+           else  d:=3;
+               end;
+
+ i = FilterAllUnits([[f_side,0],[f_class,class_apeman]]);
+  if i < (spawning_koef_of_apemen/11*d) then
+  begin
+
+    for i=1 to Rand(1,3) do
+      begin
+      apeman_init;
+      ape:=CreateHuman;
+      PlaceUnitAnywhere(ape, false);
+    end;
+
+    for i=1 to Side_Nations+0 do
+      if side_positions[i] then
+      begin
+        if Game_Type in GT_DoublePeople and Side_Positions[i] = nation_arabian then
+        begin
+          apeman_init;
+          ape:=CreateHuman;
+          PlaceUnitXYR(ape,depot_def[Side_Positions[i]][1],depot_def[Side_Positions[i]][2],50,false);
+          wait(1);
+          apeman_init;
+          ape:=CreateHuman;
+          PlaceUnitXYR(ape,depot_def[Side_Positions[i]+1][1],depot_def[Side_Positions[i]+1][2],50,false);
+        end
+        else if Game_Type in GT_DoubleNat^GT_TripleNat then
+        begin
+          if side_positions[i] then
+            for d=1 to position_nations[i]+0 do
+              if position_nations[i][d] = nation_arabian then
+              begin
+                apeman_init;
+                ape:=CreateHuman;
+                PlaceUnitXYR(ape,depot_def[Side_Positions[i]+(d-1)][1],depot_def[Side_Positions[i]+(d-1)][2],50,false);
+                wait(1);
+              end;
+        end
+        else if not Game_Type in GT_DoubleNat^GT_TripleNat^GT_DoublePeople and Side_Positions[i] = nation_arabian then
+        begin
+
+          apeman_init;
+          ape:=CreateHuman;
+          PlaceUnitXYR(ape,depot_def[Side_Positions[i]][1],depot_def[Side_Positions[i]][2],50,false);
+          wait(1);
+        end;
+
+      end;
+  end;
+  enable;
+end;
+
+// opièáci co se objevý na zaèátku hry (2-7)
+Export Function StartApe;
+var i,ape;
+begin
+
+
+  for i=1 to Rand(2,7) do
+    begin
+    apeman_init;
+    ape:=CreateHuman;
+    PlaceUnitAnywhere(ape, false);
+  end;
+end;
+
+function tiger_init;
+var tiger_names;
+begin
+
+  uc_side:=0;
+  uc_nation:=nation_nature;
+    tiger_names = ['Fredy','Montana','Pishkot','Sikorski','Riko','Kowalrski','Neo','Kessi',
+                   'Riko','Lulu','Edie','Edy','Roxy','Roxas','Beast','Drago','Draco',
+                   'Ali','Lessie','White Fang','Chess','Nora','Shriek','Bílí Tesák',
+                   'Barkman','Meuznenapadazadnejmeno','Ihavenotthinkofanyname','Hiro','Scooby',
+                   'Fantasy','Troll','Baltazar','Pamella','Kleopatra','Ceasar','Gimmy','Scooby Dooby Doo',
+                   'Yogi','Brutal','Brutus','Janina','Crazy','Jen','Jenova','Kiosuke','Akamaru' ];
+
+  hc_name=tiger_names[Rand(1,tiger_names)];
+  randomHumanStats(initial_level-2);
+
+  hc_class:=class_tiger;
+  hc_attr = [hc_attr[1]+2,hc_attr[2]+1];
+  hc_sex:=sex_male;
+  hc_importance:=0;
+  hc_agressivity:=Rand(10,50);
+end;
+
+// základní tygøi, pokud jich je na mapì víc jak limit, tak se neobjeví
+every 0$15+0$1 MARKED 494 do
+var i,d,tig;
+begin
+       case tick of
+           1.. 1$0:  d:=15;
+   1$0+1.. 5$0:  d:=14;
+   5$0+1..10$0:  d:=12;
+  10$0+1..20$0:  d:=10;
+  20$0+1..30$0:  d:=8;
+  30$0+1..50$0:  d:=7;
+  50$0+1..300$0: d:=6;
+           else  d:=3;
+               end;
+
+ i = FilterAllUnits([[f_side,0],[f_class,class_tiger]]);
+  if i < (spawning_koef_of_tiger/14*d) then
+    for i=1 to Rand(1,2) do
+      begin
+      tiger_init;
+      tig:=CreateHuman;
+      PlaceUnitAnywhere(tig, false);
+  end;
+  enable;
+end;
+
+// tygøi co se objevý na zaèátku hry (1-3)
+Export Function StartTig;
+var i,tig;
+begin
+
+  for i=1 to Rand(1,3) do
+    begin
+    tiger_init;
+    tig:=CreateHuman;
+    PlaceUnitAnywhere(tig, false);
+  end;
+end;
+

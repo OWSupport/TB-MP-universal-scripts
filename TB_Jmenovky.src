@@ -1,0 +1,35 @@
+export function DisplayNames;
+var i;
+begin
+ for i in FilterAllUnits([[f_or,[f_btype,b_depot],[f_btype,b_warehouse]] , [f_not,[f_side,0] ]]) do
+   SetBName(i,'@' & GetSide(i));
+end;
+
+every 0$1 do
+  DisplayNames;
+
+Export Function NameBuildingComplete(b);
+begin
+  DisplayNames;
+end;
+
+Export Function NameBuildingStarted(b,h);
+begin
+  DisplayNames;
+end;
+
+Export Function NameBuildingCaptured(b,o,e);
+begin
+  DisplayNames;
+end;
+
+{
+On BuildingComplete(b) do
+  NameBuildingComplete(b);
+
+On BuildingStarted(b,h) do
+  NameBuildingStarted(b,h);
+
+On BuildingCaptured(b,o,e) do
+  NameBuildingCaptured(b,o,e);
+}

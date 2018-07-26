@@ -1,0 +1,415 @@
+var strany;
+export maxTechLevel;
+
+Export function Start_tech_ur;
+var i;
+begin
+  if not maxTechLevel then
+    maxTechLevel = 8;
+  strany = [];
+
+  if def_tech_level > maxTechLevel then
+     def_tech_level = maxTechLevel;
+
+  for i:=1 to Side_Positions do
+  if Side_Positions[i] then
+    strany = strany ^ i;
+
+  for i in strany do
+    Vse_zakaz(i);
+
+  for i in strany do
+    case def_tech_level of
+      1: ur_1(i);
+      2: begin
+           ur_1(i);
+           ur_2(i);
+         end;
+      3: begin
+           ur_1(i);
+           ur_2(i);
+           ur_3(i);
+         end;
+      4: begin
+           ur_1(i);
+           ur_2(i);
+           ur_3(i);
+           ur_4(i);
+         end;
+      5: begin
+           ur_1(i);
+           ur_2(i);
+           ur_3(i);
+           ur_4(i);
+           ur_5(i);
+         end;
+      6: begin
+           ur_1(i);
+           ur_2(i);
+           ur_3(i);
+           ur_4(i);
+           ur_5(i);
+           ur_6(i);
+         end;
+      7: begin
+           ur_1(i);
+           ur_2(i);
+           ur_3(i);
+           ur_4(i);
+           ur_5(i);
+           ur_6(i);
+           ur_7(i);
+         end;
+      8: begin
+           ur_1(i);
+           ur_2(i);
+           ur_3(i);
+           ur_4(i);
+           ur_5(i);
+           ur_6(i);
+           ur_7(i);
+           ur_8(i);
+         end;
+    end;
+
+end;
+
+every 0$01 MARKED 30 do
+var i;
+begin
+
+
+   if def_upgrade_tl = 0 then
+     exit;
+
+   if def_tech_level <1 and not maxTechLevel < 1 then
+   begin
+     wait (0$50 * def_upgrade_tl);
+     for i in strany do
+       ur_1(i);
+       Hustota_Zasilek;
+   end;
+
+   if def_tech_level <2 and not maxTechLevel < 2 then
+   begin
+     wait (1$00 * def_upgrade_tl);
+     for i in strany do
+       ur_2(i);
+       Hustota_Zasilek;
+   end;
+
+   if def_tech_level <3 and not maxTechLevel < 3 then
+   begin
+     wait (3$30 * def_upgrade_tl);
+     for i in strany do
+       ur_3(i);
+       Hustota_Zasilek;
+   end;
+
+   if def_tech_level <4 and not maxTechLevel < 4 then
+   begin
+     wait (4$30 * def_upgrade_tl);
+     for i in strany do
+       ur_4(i);
+       Hustota_Zasilek;
+   end;
+
+   if def_tech_level <5 and not maxTechLevel < 5 then
+   begin
+     wait (3$30 * def_upgrade_tl);
+     for i in strany do
+       ur_5(i);
+       Hustota_Zasilek;
+   end;
+
+   if def_tech_level <6 and not maxTechLevel < 6 then
+   begin
+     wait (4$15 * def_upgrade_tl);
+     for i in strany do
+       ur_6(i);
+       Hustota_Zasilek;
+   end;
+
+   if def_tech_level <7 and not maxTechLevel < 7 then
+   begin
+     wait (4$45 * def_upgrade_tl);
+     for i in strany do
+       ur_7(i);
+       Hustota_Zasilek;
+   end;
+
+   if def_tech_level <8 and not maxTechLevel < 8 then
+   begin
+     wait (6$00 * def_upgrade_tl);
+     for i in strany do
+       ur_8(i);
+       Hustota_Zasilek;
+   end;
+end;
+
+function Vse_zakaz(side);                        //uroveò 0
+var i, zbudovy;
+begin
+  for i= 1 to 72 do
+    SetTech(i,side,state_disabled);
+
+  zbudovy = [1,5,2,3,16,19,23,10,11,12,13,14,15,29,30,32];
+  for i in zbudovy do
+    SetRestrict(i, side, state_disabled);
+
+  Tech_Level = 0;
+end;
+
+function ur_1(side);                           //úroveò 1
+var narodnost,ptech,pbudovy;
+var i;
+begin
+  narodnost:=Side_Nations[side];
+
+  case narodnost of
+  1: begin
+         pbudovy = [2,29];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [46,35,45,48];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  2: begin
+         pbudovy = [2,29];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [46,35,45,48];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+
+  3: begin
+         pbudovy = [2,29];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [46,47];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  end;
+
+  Tech_Level = 1;
+end;
+
+function ur_2(side);                              //úroveò 2
+var narodnost,ptech,pbudovy;
+var i;
+begin
+  narodnost:=Side_Nations[side];
+
+  case narodnost of
+  1: begin
+         pbudovy = [10,3];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [1,47,69,2];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  2: begin
+         pbudovy = [10,3];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [1,47,69,11];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+
+  3: begin
+         pbudovy = [10];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [1,2,48,51];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  end;
+
+  Tech_Level = 2;
+end;
+
+function ur_3(side);                               //úroveò 3
+var narodnost,ptech,pbudovy;
+var i;
+begin
+  narodnost:=Side_Nations[side];
+
+  case narodnost of
+  1: begin
+         pbudovy = [32,19,5,16,15];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [39,49,6,12,51];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  2: begin
+         pbudovy = [32,23,5,16,15];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [39,49,6,51,17,42,70];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+
+  3: begin
+         pbudovy = [3,32,19,5,14,30];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [39,49,69,40,30,11,20];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  end;
+
+  Tech_Level = 3;
+end;
+
+function ur_4(side);                                //úroveò 4
+var narodnost,ptech,pbudovy;
+var i;
+begin
+  narodnost:=Side_Nations[side];
+
+  case narodnost of
+  1: begin
+         pbudovy = [30,12,11,1];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [21,22,7,20,32,40,10,60,52];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  2: begin
+         pbudovy = [30,11,13,1];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [21,22,3,5,7,60,40,41,20,52];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+
+  3: begin
+         pbudovy = [12,11,16,1];
+         for i in pbudovy do
+           SetRestrict(i, side, state_enabled);
+
+         ptech = [21,22,44,9,37,32,63,52];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  end;
+
+  Tech_Level = 4;
+end;
+
+function ur_5(side);                               //úroveò 5
+var narodnost,ptech,pbudovy;
+var i;
+begin
+  narodnost:=Side_Nations[side];
+
+  case narodnost of
+  1: begin
+         ptech = [50,54,15,13,34,36,57] ;
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  2: begin
+         ptech = [50,54,66,18,15,43,26,];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+
+  3: begin
+         ptech = [50,54,57,29,28,33,34,19,27,38];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  end;
+
+  Tech_Level = 5;
+end;
+
+function ur_6(side);                              //úroveò 6
+var narodnost,ptech,pbudovy;
+var i;
+begin
+  narodnost:=Side_Nations[side];
+
+  case narodnost of
+  1: begin
+         ptech = [53,55,16,61,58,27];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  2: begin
+         ptech = [53,55,61,67,4,8];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+
+  3: begin
+         ptech = [53,55,58,64,71,31];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  end;
+
+  Tech_Level = 6;
+end;
+
+function ur_7(side);
+var narodnost,ptech,pbudovy;
+var i;
+begin
+  narodnost:=Side_Nations[side];
+
+  case narodnost of
+  1: begin
+         ptech = [56,62,59,14];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  2: begin
+         ptech = [56,62,68,72];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+
+  3: begin
+         ptech = [56,59,65,23];
+         for i in ptech do
+           SetTech ( i, side, state_enabled);
+     end;
+  end;
+
+  Tech_Level = 7;
+end;
+
+function ur_8(side);
+var narodnost,ptech,pbudovy;
+var i;
+begin
+  narodnost:=Side_Nations[side];
+  SetTech ( 25, side, state_enabled);
+
+  Tech_Level = 8;
+end;
