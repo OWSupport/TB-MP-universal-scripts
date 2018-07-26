@@ -5,7 +5,7 @@ Isn't necessary contain every file, just what you want use
 But must contain addition data   --  customized for the map
 
 #######  Example  ########
-----------------    MAIN.scr
+----------------    MAIN.src
 ```
 starting
 begin
@@ -256,7 +256,7 @@ end;
 ```
 
 
-----------------   Events.scr
+----------------   Events.src
 ```
 //volání techů pro nové techy
 on ResearchComplete(t,s) do
