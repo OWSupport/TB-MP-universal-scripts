@@ -1,0 +1,39 @@
+[POL]  """
+Uzupełnienie ustawień:
+Reguły gry zastępują ustawienia zaznaczone gwiazdką (*).
+Ustawienie Bomby Syberytowej jest powiązane z Technologią poziomu 8 która pozwala na opracowanie Rozszczepienia Syberytu.
+Panele słoneczne dostarczają 110% energii w godzinach popołudniowych i tylko 35% energii w nocy.
+Zasady gry - Eco War - Gracze którzy wybiorą Rosjan automatycznie otrzymają Amerykanów lub Arabów.
+
+Narody Zjednoczone - wybierz swoją nację na podstawie kombinacji narodów, które chcesz otrzymać:
+Amerykanie = Amerykanie + Arabowie
+Arabowie = Arabowie + Rosjanie
+Rosjanie = Rosjanie + Amerykanie
+
+ListBox 0 "Zasady Gry" count 9 items "Bez zasad" "Clan Base" "Clan War" "Soldier War" "Nuclear War" "Hardcore" "Dynamic SW" "Old Rules" "Eco War" default 0 "" "" "" "" "" "" "" "" ""
+ListBox 1 "Poziom Bazy *" count 5 items "Brak Bazy" "Tylko Skład" "Fortyfikacje" "Mała Baza" "Duża Baza" default 1 "Nie ma głównej bazy." "Istnieje tylko skład." "Istnieje Skład i Fortyfikacje." "Częściowo wyposażona baza." "W pełni wyposażona baza." 
+ListBox 2 "Liczba Ludzi *" count 21 items "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" default 8 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" 
+ListBox 3 "Liczba Małpoludów *" count 13 items "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" default 0 "" "" "" "" "" "" "" "" "" "" "" "" "" 
+ListBox 4 "Poziom Doświadczenia *" count 4 items "Niedoświadczeni" "Mało Doświadczeni" "Doświadczeni" "Bardziej Doświadczeni" default 1 "Średni poziom umiejętności wynosi 2." "Średni poziom umiejętności wynosi 3." "Średni poziom umiejętności wynosi 4." "Średni poziom umiejętności wynosi 5." 
+ListBox 5 "Przydział Profesji" count 2 items "Losowo" "Jednolity" default 1 "Profesja dla każdej osoby jest wybierana losowo." "Liczba osób w każdej klasie będzie taka sama." 
+ListBox 6 "Zasoby Początkowe *" count 4 items "Brak" "Trochę" "Średnio" "Dużo" default 2 "" "" "" "" 
+ListBox 7 "Częstotliwość Zrzutów *" count 3 items "Niska" "Średnia" "Częsta" default 1 "" "" "" 
+ListBox 8 "Złoża Ropy *" count 2 items "Normalne" "Dodatkowe" default 0 "" "" 
+ListBox 9 "Złoża Syberytu *" count 2 items "Normalne" "Dodatkowe" default 0 "" "" 
+ListBox 10 "Wpływ Flag Na Morale *" count 5 items "Brak" "Szybko się zmniejszający" "Zmniejszający się" "Wolno się zmniejszający" "Stały" default 3 "Główa baza nie posiada flagi moralów." "Bonus do obrony niedaleko wolno zmniejszającej się flagi." "Bonus do obrony niedaleko zmniejszające się flagi." "Bonus do obrony niedaleko szybko zmniejszającej się flagi." "Bonus do obrony niedaleko stałej flagi." 
+ListBox 11 "Warunki Zwycięstwa" count 3 items "Unicestwienie" "Dominacja" "Zabójstwo" default 1 "Zabij wszystkich ludzi, zniszcz wszystkie skład oraz pojazdy sterowane przez komputer/małpę." "Zabij wszystkich ludzi." "Zabij głównego bohatera." 
+ListBox 12 "Dzikie Małpoludy *" count 4 items "Brak" "Trochę" "Średnio" "Dużo" default 3 "" "" "" "" 
+ListBox 13 "Tygrysy Szablozębne *" count 4 items "Brak" "Trochę" "Średnio" "Dużo" default 2 "" "" "" ""  
+ListBox 14 "Tryb Pojawiania się Postaci" count 4 items "Brak" "Dodatkowi Ludzie" "Przywrócenie Martwych Postaci" "Zastąpienie Martwych Postaci" default 2 "Ludzie nie pojawiają się z przyszłości." "Nowi ludzie przybywają cały czas." "Umierająca postać tworzy nową postać o takich samych poziomach umiejętnościach." "Umierająca postać tworzy nową postać o różnych poziomach umiejętności." 
+ListBox 15 "Pojawianie się Postaci *" count 3 items "Rzadko" "Normalnie" "Często" default 1 "People arrive slower than normal." "Postacie pojawiają się w normalnych odstępach czasu." "Postacie pojawiają się szybciej niż normalnie." 
+ListBox 16 "Początkowy Poziom Technologiczny *" count 9 items "0" "1" "2" "3" "4" "5" "6" "7" "8" default 8 "Brak technologi." "Technologie związane z ropą oraz słoneczmi a także warsztat." "Działo Gattlinga, technologie małpoludów, warsztat." "Koszary, działa, komory transportowe, wyrzutnie rakiet, celowniki laserowe." "Syberyt, AI, laser, stymulatory, moździerze, bazooki." "Zdalne sterowanie, zaawansowane podwozie, samozniszczenie, ciężkie działa, amunicja spowalniająca i nasenna. " "Biodetekcja, spowalniacz czasu, rakiety dalekiego zasięgu." "Podwójny laser, implozja Syberytu, pojazd behemoth." "Bomba Syberytowa" 
+ListBox 17 "Postęp Technologiczny *" count 4 items "Brak postępu" "Szybki" "Normalny" "Wolny" default 2 "Poziom technologiczny jest taki sam jak na początku gry." "Poziom technologiczny rośnie co 0,8 (od 0 do 1) do 6 (od 7 do 8) minut" "Poziom technologiczny rośnie co 1,75 (od 0 do 1) do 12 (od 7 do 8) minut." "Poziom technologiczny rośnie co 2,5 (od 0 do 1) do 18 (od 7 do 8) minut."
+ListBox 18 "Wykrywanie Syberytu *" count 2 items "Nie Przebadane" "Przebadane" default 1 "" "" 
+ListBox 19 "Bomba Syberytowa *" count 5 items "Dostępca" "Dostępna po pół godziny" "Dostępna po godzinie" "Dostępna po półtorej godziny" "Dostępna po dwóch godzinach" default 0 "Gracz może opracować rozszczepnie Syberytu w każdej chwili." "Gracz może opracować rozszczepnie Syberytu po upływie półgodziny gry." "Gracz może opracować rozszczepnie Syberytu po upływie godziny gry." "Gracz może opracować rozszczepnie Syberytu po upływie półtorej gry." "Gracz może opracować rozszczepnie Syberytu po upływie dwóch godzin gry." 
+ListBox 20 "Czas Na Rozbudowę *" count 4 items "Brak" "5 Minut" "10 Minut" "15 Minut" default 0 "Gracze mogą natychmiast się atakować." "Gracze mogą się atakować po upływie 5 minut." "Gracze mogą się atakować po upływie 10 minut." "Gracze mogą się atakować po upływie 15 minut."
+ListBox 21 "Arabski Szejk *" count 3 items "Brak szejka" "Bohater jako szejk" "Dodatkowy Szejk" default 2 "Arabski gracz nie posiada szejka" "Arabski gracz posiada bohatera jako szejka." "Arabski gracz posiada szejka jako dodatkową jednostkę."
+ListBox 22 "Początkowa Pora Dnia" count 5 items "Ranek" "Przedpołudnie" "Popułudnie" "Wieczór" "Noc" default 1 "Pomiędzy 4 a 7 rano." "Pomiędzy 8 a 12 rano." "Pomiędzy 13 a 16." "Pomiędzy 18 a 20." "Pomiędzy 23 po południu a 3 rano." 
+ListBox 23 "Tempo Upływu Dnia" count 5 items "Czas Rzeczywisty" "Bardzo Wolno" "Wolno" "Normalnie" "Szybko" default 4 "Jedna minuta w grze odpowiada jednej minucie czasu rzeczywistego." "Jedna minuta w grze odpowiada 25 sekundom czasu rzeczywistego." "Jedna minuta w grze odpowiada 10 sekundom czasu rzeczywistego." "Jedna minuta w grze odpowiada 3 sekundom czasu realnego." "Jedna minuta w grze odpowiada jednej sekundzie czasu realnego."
+ListBox 24 "Publiczne Punkty" count 2 items "Nie" "Tak" default 1 "Gracze widzą tylko swoje punkty." "Gracz widzi punkty pozostałych." 
+ListBox 25 "Punkty Króla Wzgórza" count 8 items "Wyłączone" "200" "300" "500" "700" "1000" "1500" "2000" default 0 "Zwycięstwo Król Wzgórza jest niedostępne." "Zwycięstwo Król Wzgórza wymaga 200 punktów." "Zwycięstwo Król Wzgórza wymaga 300 punktów." "Zwycięstwo Król Wzgórza wymaga 500 punktów." "Zwycięstwo Król Wzgórza wymaga 700 punktów." "Zwycięstwo Król Wzgórza wymaga 1000 punktów." "Zwycięstwo Król Wzgórza wymaga 1500 punktów." "Zwycięstwo Król Wzgórza wymaga 2000 punktów." 
+#ListBox 26 Missing Translate
