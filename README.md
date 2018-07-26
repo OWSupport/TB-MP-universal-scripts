@@ -6,7 +6,7 @@ But must contain addition data   --  customized for the map
 
 #######  Example  ########
 ----------------    MAIN.scr
-
+```
 starting
 begin
   ifThrowback = true;
@@ -249,10 +249,11 @@ begin
       2: shipments_density := Tech_Level*11.25 + 12;
     end;
 end;
-
+```
 
 
 ----------------   Events.scr
+```
 //volání techů pro nové techy
 on ResearchComplete(t,s) do
 begin
@@ -318,3 +319,4 @@ end;
 on HumanDestroyed(identifier, side, nation, x, y, direction, sex, cl) do
  if def_respawining_type > 1 then
   RespawnHumanDestroyed(identifier, side, nation, x, y, direction, sex, cl);
+```
