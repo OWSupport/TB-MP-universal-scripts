@@ -1,6 +1,6 @@
 # TB-Universal-code
 # Last update - 26.7.2018
-Isn'T necesary contain every code, just what you want use
+Isn't necessary contain every file, just what you want use
 
 But must contain addition data   --  customized for the map
 
@@ -24,9 +24,9 @@ begin
   mp_selectmsg = true;
 
   read_multiplayer_and_game_parameters;
-  specialParameters;
+  specialParameters;                        // here you can set own or overwrite def_variables 
   standartSets;
-  prepare_map_coordinates;
+  prepare_map_coordinates;                  // Here you can overwrite StandartSets and add own
 
   InitGameRules;
 
