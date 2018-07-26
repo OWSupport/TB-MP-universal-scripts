@@ -1,0 +1,40 @@
+#FRA """
+
+Ajout d'options:
+Les Règles de Jeu remplacent les options dotées d'un astérisque (*).
+Les options de la Bombe à Sibérite sont liées à la Technologie niveau 8 qui autorise la technologie de Fission Sibérite.
+Les panneaux solaires octroient 110% d'énergie l'après-midi et seulement 35% d'énergie la nuit.
+Règles de Jeu - Eco War - Les joueurs qui choisissent de jouer Russe seront attribués à la nation Américaine ou Arabe automatiquement.
+
+Nations Unies - choisissez votre nation selon ces différentes combinaisons :
+Américain = Américain + Arabe
+Arabe = Arabe + Russe
+Russe = Russe + Américain
+
+ListBox 0 "Règles de Jeu" count 9 items "Aucune" "Clan Base" "Clan War" "Soldier War" "Nuclear War" "Hardcore" "Dynamic SW" "Old Rules" "Eco War" default 0 "" "" "" "" "" "" "" "" ""
+ListBox 1 "Niveau Base *" count 5 items "Pas de Base" "Dépôt Seul" "Fortifiée" "Petite Base" "Grande Base" default 1 "Aucune base principale" "Un dépôt seulement" "Un dépôt et des fortifications" "Une base en partie équipée." "Une base bien équipée." 
+ListBox 2 "Nombre Individus *" count 21 items "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" default 8 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" 
+ListBox 3 "Nombre Peks *" count 13 items "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" default 0 "" "" "" "" "" "" "" "" "" "" "" "" "" 
+ListBox 4 "Expérience *" count 4 items "Inexpérimenté" "Peu expérimenté" "Expérimenté" "Très expérimenté" default 1 "Niveau moyen spécialité principale : 2" "Niveau moyen spécialité principale : 3" "Niveau moyen spécialité principale : 4" "Niveau moyen spécialité principale : 5" 
+ListBox 5 "Répartition Métiers" count 2 items "Au hasard" "Uniforme" default 1 "Le Métier est choisi aléatoirement pour chaque individu." "Le nombre d'individu pour chaque métier sera à peu près le même." 
+ListBox 6 "Ressources Départ *" count 4 items "Aucune" "Peu" "Moyen" "Beaucoup" default 2 "" "" "" "" 
+ListBox 7 "Densité Cargaisons *" count 3 items "Faible" "Moyenne" "Elevée" default 1 "" "" "" 
+ListBox 8 "Gisements Pétrole suppl. *" count 2 items "Normal" "Extra" default 0 "" "" 
+ListBox 9 "Gisements Sibérite suppl. *" count 2 items "Normal" "Extra" default 0 "" "" 
+ListBox 10 "Evol. Effet Drapeaux *" count 5 items "Aucune" "Baisse rapide" "Baisse normale" "Baisse lente" "Maintien" default 3 "Pas de drapeau." "Le bonus de Défense près du drapeau baisse peu à peu." "Le bonus de Défense près du drapeau baisse normalement." "Le bonus de Défense près du drapeau baisse rapidement." "Le bonus de Défense près du drapeau ne baisse pas." 
+ListBox 11 "Conditions Victoire" count 3 items "Annihilation" "Domination" "Assassinat" default 1 "Tuez tout le monde, détruisez tous les dépôts et tous les véhicles." "Tuez tout le monde." "Tuez le héro adverse." 
+ListBox 12 "Peks sauvages *" count 4 items "Aucun" "Peu" "Moyen" "Beaucoup" default 3 "" "" "" "" 
+ListBox 13 "Tigres à dents de sabre *" count 4 items "Aucun" "Peu" "Moyen" "Beaucoup" default 2 "" "" "" ""  
+ListBox 14 "Mode Réapparition Ind." count 4 items "Aucun" "Individus Extra" "Ressuciter Morts" "Remplacer Morts" default 2 "Personne ne vient du futur." "De nouveaux individus arrivent tout le temps." "Les Individus qui meurent sont remplacés par de nouvelles personnes avec les mêmes niveaux." "Les Individus qui meurent sont remplacés par de nouvelles personnes avec des niveaux différents." 
+ListBox 15 "Nouveaux Venus *" count 3 items "Rare" "Normal" "Commun" default 1 "Le personnel arrive plus lentement." "Le personnel arrive à intervalles réguliers." "Le personnel arrive plus souvent." 
+ListBox 16 "Niveau Techn. de Départ *" count 9 items "0" "1" "2" "3" "4" "5" "6" "7" "8" default 8 "Pas de technologie." "Technologies solaires et essence, atelier." "Gatling, technologies peks, usine." "Casernes, mitrailleuses, bennes, lance-roquettes, sniper." "Sibérite, IA, laser, drogues, mortiers, bazookas." "Télécommande, morphling, auto-destruction, mitrailleuses lourdes, décélérateurs et munitions soporifiques." "Biodétection, espace temps, roquettes." "Double laser, implosion sibérite, béhémots." "Bombe à sibérite." 
+ListBox 17 "Progrès Techn. *" count 4 items "Pas de progrès" "Rapide" "Normal" "Lentement" default 2 "Le niveau Technologique reste le même que le début de jeu." "Le niveau Technologique monte toutes les 0.8 (de 0 à 1) à 6 (de 7 à 8) minutes." "Le niveau Technologique monte toutes les 1,75 (de 0 à 1) à 12 (fr 7 à 8) minutes." "Le niveau Technologique monte toues les 2,5 (de 0 à 1) à 18 (de 7 à 8) minutes."
+ListBox 18 "Détection sibérite *" count 2 items "Non recherchée" "Recherchée" default 1 "" "" 
+ListBox 19 "Bombe à sibérite *" count 5 items "Autorisée" "Autorisée après une demie-heure" "Autorisée après une heure" "Autorisée après une heure et demie" "Autorisée après deux heures" default 0 "Possible à n'importe quel moment." "Possible après une demie-heure." "Possible après une heure." "Possible après une heure et demie." "Possible après deux heures." 
+ListBox 20 "Temps de Préparation *" count 4 items "Aucun" "5 Minutes" "10 Minutes" "15 Minutes" default 0 "Les joueurs peuvent s'attaquer immédiatement." "Les joueurs peuvent s'attaquer après 5 minutes." "Les joueurs peuvent s'attaquer après 10 minutes." "Les joueurs peuvent s'attaquer après 15 minutes."
+ListBox 21 "Sheikh Arabe *" count 3 items "Pas de Sheikh" "Le héro est un Sheikh" "Sheikh en Extra" default 2 "Les joueurs arabes n'ont pas de Sheikh." "Les héros des joueurs arabes sont des Sheikhs." "Les joueurs arabes ont chacun 1 Sheikh en plus qui ne réapparaît pas."
+ListBox 22 "Heure de départ" count 5 items "Aube" "Matinée" "Après-midi" "Soirée" "Nuit" default 1 "Entre 4 et 7 heure." "Entre 8 et 12 heure." "Entre 13 et 17 heure." "Entre 18 et 22 heure." "Entre 23 et 3 heure." 
+ListBox 23 "Défilement journée" count 5 items "Réel" "Très lent" "Lent" "Normal" "Rapide" default 4 "1 min en jeu = 1 min réelle." "1 min en jeu = 25 sec réelles." "1 min en jeu = 10 sec réelles." "1 min en jeu = 3 sec réelles." "1 min en jeu = 1 sec réelle."
+ListBox 24 "Score Public" count 2 items "Non" "Oui" default 1 "Les joueurs ne voient que leur propre score." "Les joueurs voient le score de tout le monde." 
+ListBox 25 "Points Maître de la Colline" count 8 items "Désactivé" "200" "300" "500" "700" "1000" "1500" "2000" default 0 "Victoire Maître de la Colline désactivée." "La Victoire Maître de la colline nécessite 200 points." "La Victoire Maître de la colline nécessite 300 points." "La Victoire Maître de la colline nécessite 500 points." "La Victoire Maître de la colline nécessite 700 points." "La Victoire Maître de la colline nécessite 1000 points." "La Victoire Maître de la colline nécessite 1500 points." "La Victoire Maître de la colline nécessite 2000 points." 
+#ListBox 26 Missing translate
