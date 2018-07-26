@@ -1,0 +1,39 @@
+[ENG]  """
+Settings addendum:
+Game Rules override settings items marked with an asterisk (*).
+Siberite Bomb settings are tied to Technology level 8 which allows Siberite Fission technology.
+The solar panels provide 110% energy in the afternoon and only 35% energy in the night.
+Game Rules - Eco War - Players who chose Russian will automatically get American or Arab.
+
+United Nations - choose your nation based on what combination of nations you want:   (In SGUI isn'T necessary)
+American = American + Arab
+Arab = Arab + Russian
+Rus = Russian + American
+
+ListBox 0 "Game Rules" count 9 items "No Rules" "Clan Base" "Clan War" "Soldier War" "Nuclear War" "Hardcore" "Dynamic SW" "Old Rules" "Eco War" default 0 "" "" "" "" "" "" "" "" ""
+ListBox 1 "Base Level *" count 5 items "No Base" "Depot Only" "Fortified" "Small Base" "Big Base" default 1 "There is no main base." "There is only a depot." "There is a depot and fortifications." "Partly equipped base." "Fully equipped base." 
+ListBox 2 "Amount of People *" count 21 items "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" default 8 "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" 
+ListBox 3 "Amount of Apemen *" count 13 items "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" default 0 "" "" "" "" "" "" "" "" "" "" "" "" "" 
+ListBox 4 "Skill Level *" count 4 items "Inexperienced" "Little experienced" "Experienced" "More experienced" default 1 "Average level in main skill is 2." "Average level in main skill is 3." "Average level in main skill is 4." "Average level in main skill is 5." 
+ListBox 5 "Profession Distribution" count 2 items "Random" "Uniform" default 1 "Profesion is chosen for each person randomly." "The number of people with each profesion will be roughly the same." 
+ListBox 6 "Starting Resources *" count 4 items "None" "Few" "Medium" "Lots" default 2 "" "" "" "" 
+ListBox 7 "Shipments Density *" count 3 items "Low" "Medium" "High" default 1 "" "" "" 
+ListBox 8 "Oil Deposits *" count 2 items "Normal" "Extra" default 0 "" "" 
+ListBox 9 "Siberite Deposits *" count 2 items "Normal" "Extra" default 0 "" "" 
+ListBox 10 "Morale Flags *" count 5 items "None" "Fast Decreasing" "Decreasing" "Slowly Decreasing" "Not Decreasing" default 3 "Main base doesn't have a moral flag." "Defense bonus near morale flag decreases slowly." "Defense bonus near morale flag decreases normally." "Defense bonus near morale flag decreases fast." "Defense bonus near morale flag doesn't decrease." 
+ListBox 11 "Victory Conditions" count 3 items "Annihilation" "Dominance" "Assassination" default 1 "Kill all people, destroy all depots and computer/apeman controlled vehicles." "Kill all people." "Kill the hero character." 
+ListBox 12 "Wild Apemen *" count 4 items "None" "Few" "Medium" "Lots" default 3 "" "" "" "" 
+ListBox 13 "Sabertooth Tigers *" count 4 items "None" "Few" "Medium" "Lots" default 2 "" "" "" ""  
+ListBox 14 "People Respawn Mode" count 4 items "No Respawn" "Extra People" "Respawn Dead" "Replace Dead" default 2 "No people coming from future." "New people arrive all the time." "Person dying spawns new person with the same skills." "Person dying spawns new person with different skills." 
+ListBox 15 "People Respawning *" count 3 items "Rare" "Normal" "Common" default 1 "People arrive slower than normal." "People arrive with normal time intervals." "People arrive faster than normal." 
+ListBox 16 "Starting Technology Level *" count 9 items "0" "1" "2" "3" "4" "5" "6" "7" "8" default 8 "No technologies." "Oil and solar technologies, workshop." "Gatling gun, apeman technologies, factory." "Barracks, guns, cargo bays, rocket launchers, sniper." "Siberite, AI, laser, drugs, mortars, bazookas." "Remote control, morphling, selfdestruct, heavy guns, decelerator and soporific ammo." "Biodetection, time lapser, rockets." "Double laser, siberite implosion, behemoth." "Siberite bomb." 
+ListBox 17 "Technological Progress *" count 4 items "No Progress" "Fast" "Normal" "Slow" default 2 "Technological level stays the same as at the start of the game." "Technological level raises every 0,8 (from 0 to 1) to 6 (from 7 to 8) minutes." "Technological level raises every 1,75 (from 0 to 1) to 12 (from 7 to 8) minutes." "Technological level raises every 2,5 (from 0 to 1) to 18 (from 7 to 8) minutes."
+ListBox 18 "Siberite detection *" count 2 items "Not Researched" "Researched" default 1 "" "" 
+ListBox 19 "Siberite Bomb *" count 5 items "Authorized" "Authorized after half hour" "Authorized after one hour" "Authorized after one and half hour" "Authorized after two hours" default 0 "Players can research the Siberite fission technology anytime." "Players can research the Siberite fission technology after half an hour." "Players can research the Siberite fission technology after an hour." "Players can research the Siberite fission technology after an hour and a half." "Players can research the Siberite fission technology after two hours." 
+ListBox 20 "Build Up Time *" count 4 items "None" "5 Minutes" "10 Minutes" "15 Minutes" default 0 "Players can attack each other immidiately." "Players can attack each other after 5 minutes." "Players can attack each other after 10 minutes." "Players can attack each other after 15 minutes."
+ListBox 21 "Arabian Sheikh *" count 3 items "No Sheikh" "Hero is Sheikh" "Sheikh is Extra" default 2 "Arab players do not have a Sheikh." "Arab players' hero has Desert Warrior profession." "Arab players have Sheikh as an extra person who doesn't respawn."
+ListBox 22 "Starting Day Time" count 5 items "Morning" "Forenoon" "Afternoon" "Evening" "Night" default 1 "Between 4 and 7 a.m." "Between 8 and 12 a.m." "Between 1 and 5 p.m." "Between 6 and 10 p.m." "Between 11 p.m. and 3 a.m." 
+ListBox 23 "Day Time Speed" count 5 items "Real Time" "Very Slow" "Slow" "Normal" "Fast" default 4 "One minute in game equals one minute real time." "One minute in game equals 25 seconds real time." "One minute in game equals 10 seconds real time." "One minute in game equals 3 seconds real time." "One minute in game equals one second real time."
+ListBox 24 "Public Score" count 2 items "No" "Yes" default 1 "Players see only their own score." "Players see score of all players." 
+ListBox 25 "King of the Hill Points" count 8 items "Disabled" "200" "300" "500" "700" "1000" "1500" "2000" default 0 "King of the Hill victory is disabled." "King of the Hill victory requires 200 points." "King of the Hill victory requires 300 points." "King of the Hill victory requires 500 points." "King of the Hill victory requires 700 points." "King of the Hill victory requires 1000 points." "King of the Hill victory requires 1500 points." "King of the Hill victory requires 2000 points." 
+ListBox 26 "War for Territory" count 11 items "Disabled" "Occupy 3 of 5 Flags" "Occupy 4 of 5 Flags" "Occupy all 5 Flags" "Get 200 points" "Get 300 points" "Get 500 points" "Get 700 points" "Get 1000 points" "Get 1500 points" "Get 2000 points" default 1 "King of the Hill victory is disabled." "War For Territory victory requires 3 of 5 flags occupied" "War For Territory victory requires 4 of 5 flags occupied" "War For Territory victory requires all 5 flags occupied" "War For Territory victory requires 200 points." "War For Territory victory requires 300 points." "War For Territory victory requires 500 points." "War For Territory victory requires 700 points." "War For Territory victory requires 1000 points." "War For Territory victory requires 1500 points." "War For Territory victory requires 2000 points." 
