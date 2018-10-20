@@ -173,7 +173,7 @@ begin
       Player_Side    = 3;
       Player_Team    = 0;
 
-      Side_Positions = [1,2,3,4,5,6,7,7];
+      Side_Positions = [1,2,3,4,5,6,7,8];
       Side_Teams     = [1,1,2,2,3,3,4,4];
       Side_Nations   = [1,2,2,1,3,2,1,2];
       Side_Comps     = [0,0,0,0,0,0,0,0];
@@ -217,41 +217,21 @@ end;
 export function Hustota_Zasilek;
 var i;
 begin
-  pocet_hracu := 0;
-
-  for i:=1 to 8 do
-    if Side_Positions[i] <> 0 then
-       pocet_hracu := pocet_hracu + 1;
-  if game_type = GT_doublenat^GT_doublepeople then
-    pocet_hracu = pocet_hracu * 2;
-
-  if def_game_rules then
+ if def_game_rules then
      tech_level=8;
 
-  if pocet_hracu = 2 then
-    case def_shipments_density of
-      0: shipments_density := Tech_Level*1.5 + 4;
-      1: shipments_density := Tech_Level*2 + 6;
-      2: shipments_density := Tech_Level*3 + 8;
-    end
-  else if pocet_hracu <= 4 then
-    case def_shipments_density of
-      0: shipments_density := Tech_Level*2.75 + 6;
-      1: shipments_density := Tech_Level*4.25 + 8;
-      2: shipments_density := Tech_Level*6 + 9;
-    end
-  else if pocet_hracu <= 6 then
-    case def_shipments_density of
-      0: shipments_density := Tech_Level*3.75 + 8;
-      1: shipments_density := Tech_Level*6 + 9;
-      2: shipments_density := Tech_Level*8.25 + 10;
-    end
-  else if pocet_hracu <= 8 then
-    case def_shipments_density of
-      0: shipments_density := Tech_Level*4.5 + 9;
-      1: shipments_density := Tech_Level*7.25 + 10;
-      2: shipments_density := Tech_Level*11.25 + 12;
-    end;
+ case def_shipments_density of
+    0: shipments_density := 40;       // hrubý odhad, nahradit lepšími čísly
+    1: shipments_density := 60;
+    2: shipments_density := 90;
+  end;
+
+  if tech_level < 7 then
+    shipments_density := shipments_density * 0.85
+  else if tech_level < 5 then
+    shipments_density := shipments_density * 0.7
+  else if tech_level < 3 then
+    shipments_density := shipments_density * 0.6;
 end;
 ```
 
