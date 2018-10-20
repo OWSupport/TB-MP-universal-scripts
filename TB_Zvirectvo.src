@@ -1,4 +1,6 @@
-var nations;
+var nations, amount_of_players;
+Export ApesAreas;
+
 function apeman_init;
 var ape_names;
 begin
@@ -32,7 +34,7 @@ begin
   hc_importance:=0;
   hc_agressivity:=Rand(-20,20);
 end;
-
+{
 // základní opièáci, pokud jich je na mapì víc jak limit, tak se neobjeví
 every 0$15+0$1 MARKED 493 do
 var i,d,ape;
@@ -97,12 +99,51 @@ begin
   end;
   enable;
 end;
+}
 
+// obnova Opic
+every 0$15+0$1 MARKED 493 do
+var i,a,ape;
+begin
+
+  repeat
+    ape = FilterAllUnits([[f_side,0],[f_class,class_apeman]]);
+    Wait((ape+1)*Rand(0$10,1$0));
+  until ape<=(spawning_koef_of_apemen/6)*amount_of_players;
+
+  for i = 1 to spawning_koef_of_apemen/5 do
+  if ApesAreas then
+  begin
+    for a in ApesAreas do
+    begin
+      apeman_init;
+      PlaceUnitArea(CreateHuman,a,false);
+      Wait(3);
+    end;
+  end
+  else
+  begin
+    for a = 1 to amount_of_players do
+    begin
+      apeman_init;
+      PlaceUnitAnywhere(CreateHuman,false);
+      Wait(3);
+    end;
+  end;
+
+  wait(rand(1$0,5$0));
+end;
 // opièáci co se objevý na zaèátku hry (2-7)
 Export Function StartApe;
 var i,ape;
 begin
-
+  for i:=1 to 8 do
+    if Side_Positions[i] <> 0 then
+      amount_of_players := amount_of_players + 1;
+  if game_type in GT_doublenat^GT_doublepeople then
+    amount_of_players = amount_of_players * 2
+  else if game_type = GT_TripleNat then
+    amount_of_players = amount_of_players * 3;
 
   for i=1 to Rand(2,7) do
     begin
@@ -141,13 +182,10 @@ var i,d,tig;
 begin
        case tick of
            1.. 1$0:  d:=15;
-   1$0+1.. 5$0:  d:=14;
-   5$0+1..10$0:  d:=12;
-  10$0+1..20$0:  d:=10;
-  20$0+1..30$0:  d:=8;
-  30$0+1..50$0:  d:=7;
-  50$0+1..300$0: d:=6;
-           else  d:=3;
+   1$0+1.. 2$0:  d:=14;
+  20$0+1..50$0:  d:=12;
+  50$0+1..300$0: d:=11;
+           else  d:=9;
                end;
 
  i = FilterAllUnits([[f_side,0],[f_class,class_tiger]]);
